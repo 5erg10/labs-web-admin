@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex justify-content-between align-items-center">
 		<div class="col-auto">
-			<img class="d-inline-block" height="50" src="/static/img/logo.png"/>
+			<img class="d-inline-block" height="50" src="static/img/logo.png"/>
 		</div>
 		<div class="col-auto">
 			<div class="container-fluid">
