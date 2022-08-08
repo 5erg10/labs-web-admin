@@ -53,6 +53,13 @@
 							</label>
 							<input type="url" v-model="temp.url" class="form-control" placeholder="Type here the link url">
 						</div>
+						<div class="form-group">
+							<label for="type">
+								<i class="fas fa-link mr-2"></i>
+								Type
+							</label>
+							<input type="text" v-model="temp.type" class="form-control" placeholder="media type (video, audio or image)">
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" 
@@ -70,6 +77,7 @@
 </template>
 
 <script>
+import SelectForm from '@/components/SelectForm'
 export default {
 	props: {
 		name: {
@@ -112,7 +120,8 @@ export default {
 			modal: false,
 			temp: { 
 				title: null,
-				url: null
+				url: null,
+				type: null
 			},
 			tempList: [],
 			error: false,
@@ -133,11 +142,12 @@ export default {
 	},
 	methods: {
 		addItem() {
-			if (this.temp.title && this.temp.url) {
+			if (this.temp.title && this.temp.url && this.temp.type) {
 				this.tempList.push(this.temp);
 				this.temp = { 
 					title: null,
-					url: null
+					url: null,
+					type: null
 				};
 
 				this.modal = false;
@@ -147,6 +157,9 @@ export default {
 			let index = this.tempList.indexOf(item);
 			this.tempList.splice(index, 1);
 		}
+	},
+	components: {
+		SelectForm
 	}
 }
 </script>
